@@ -29,9 +29,13 @@ O projeto simula um cenário real de análise de dados utilizando **banco de dad
 
 analise_vendas_kpi/
 │── main.py # Script principal
+
 │── vendas.csv # Base de dados de vendas
+
 │── vendas.db # Banco de dados SQLite
+
 │── logo.png # Logo do projeto
+
 │── README.md # Documentação
 
 
@@ -69,4 +73,5 @@ pip install pandas matplotlib
 
 3. Execute o projeto:
 python main.py
+
 
