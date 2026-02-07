@@ -1,5 +1,7 @@
-<div align="center">
-  <img src="logo.png" alt="Leonardo Brito Logo" width="120"/>
+<p align="center">
+  <img src="./logo.png" width="120">
+</p>
+
   <h1>📊 Análise de Vendas com KPIs</h1>
 </div>
 
@@ -67,3 +69,4 @@ pip install pandas matplotlib
 
 3. Execute o projeto:
 python main.py
+
