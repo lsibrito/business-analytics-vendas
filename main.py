@@ -2,15 +2,16 @@ import sqlite3
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# ==========================
 # 1. Conectar ao banco
-# ==========================
+
 conn = sqlite3.connect("vendas.db")
 cursor = conn.cursor()
 
-# ==========================
-# 2. Criar tabela
-# ==========================
+cursor = conn.cursor()
+
+
+# 2. Criação da tabela
+
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS vendas (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -23,9 +24,9 @@ CREATE TABLE IF NOT EXISTS vendas (
 )
 """)
 
-# ==========================
-# 3. Inserir dados
-# ==========================
+
+# 3. Inserção de dados
+
 dados = [
     ("2025-01-01", "Notebook", "Eletronicos", 3500, 1, "Sudeste"),
     ("2025-01-02", "Mouse", "Eletronicos", 80, 3, "Sul"),
@@ -42,9 +43,9 @@ VALUES (?, ?, ?, ?, ?, ?)
 
 conn.commit()
 
-# ==========================
-# 4. KPI Geral (SQL)
-# ==========================
+
+# 4. KPI Geral/ SQL do projeto analise de dados
+
 kpi_query = """
 SELECT 
     SUM(valor * quantidade) AS faturamento_total,
@@ -57,9 +58,9 @@ kpis = pd.read_sql_query(kpi_query, conn)
 print("===== KPIs Gerais =====")
 print(kpis)
 
-# ==========================
+
 # 5. Faturamento por Categoria (SQL)
-# ==========================
+
 categoria_query = """
 SELECT 
     categoria,
@@ -73,9 +74,9 @@ df_categoria = pd.read_sql_query(categoria_query, conn)
 print("\n===== Faturamento por Categoria =====")
 print(df_categoria)
 
-# ==========================
+
 # 6. Faturamento por Região (SQL)
-# ==========================
+
 regiao_query = """
 SELECT 
     regiao,
@@ -89,13 +90,14 @@ df_regiao = pd.read_sql_query(regiao_query, conn)
 print("\n===== Faturamento por Região =====")
 print(df_regiao)
 
-# ==========================
-# 7. Visualização
-# ==========================
+
+# 7. Visualização do resultado da analise
+
 plt.figure()
 plt.bar(df_categoria["categoria"], df_categoria["faturamento_total"])
 plt.title("Faturamento por Categoria")
 plt.ylabel("Faturamento")
 plt.show()
+
 
 conn.close()
