@@ -1,0 +1,13 @@
+"data,produto,categoria,valor,quantidade,regiao"
+"2025-01-01,Notebook,Eletronicos,3500,1,Sudeste"
+"2025-01-02,Mouse,Eletronicos,80,3,Sul"
+"2025-01-03,Cadeira,Moveis,900,2,Sudeste"
+"2025-01-05,Teclado,Eletronicos,150,4,Nordeste"
+"2025-01-07,Mesa,Moveis,1200,1,Sudeste"
+"2025-01-10,Monitor,Eletronicos,1100,2,Sul"
+2025-01-12
+2025-01-15
+2025-02-01
+"2025-02-05,Cadeira,Moveis,900,1,Nordeste"
+"2025-02-10,Monitor,Eletronicos,1100,1,Sudeste"
+"2025-02-12,Mesa,Moveis,1200,2,Sul"
