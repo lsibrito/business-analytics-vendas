@@ -7,71 +7,38 @@
 
 ---
 
-## 📌 Descrição do Projeto
+# Análise de Vendas e KPIs com Python e SQL
 
-Projeto de **Business Analytics** desenvolvido em Python com foco em **análise descritiva de dados**, **criação de KPIs** e **apoio à tomada de decisão** a partir de dados de vendas.
+## 🎯 O Objetivo
+Criei este projeto para simular um dia a dia real de um analista de dados. A ideia não era apenas gerar gráficos, mas construir todo o fluxo de dados "do zero": começando pela estruturação de um banco de dados (SQLite), passando pela ingestão dos dados e finalizando com a extração de inteligência de negócio (Business Analytics).
 
-O projeto simula um cenário real de análise de dados utilizando **banco de dados relacional**, consultas SQL e visualizações gráficas.
+Meu foco aqui foi responder a perguntas de negócio como: *"Qual região está performando melhor?"* e *"Qual é o nosso ticket médio real?"*.
 
----
+## 🛠 O que eu usei (Tech Stack)
+Para simular um ambiente corporativo sem a complexidade de servidores na nuvem, escolhi:
+* **Python:** Para orquestrar todo o processo.
+* **SQLite + SQL:** Queria exercitar a criação de tabelas e consultas manuais (`SELECT`, `GROUP BY`), fugindo um pouco da dependência total do Pandas para tudo.
+* **Pandas:** Para manipulação avançada dos DataFrames e cálculos estatísticos.
+* **Matplotlib:** Para traduzir os números em visualização gráfica simples e direta.
 
-## 🛠️ Tecnologias Utilizadas
+## 🚀 Como o projeto funciona
+O script `main.py` executa o pipeline completo em 5 etapas:
+1.  **Conexão e Setup:** Cria automaticamente o banco `vendas.db` se ele não existir.
+2.  **Ingestão:** Simula a entrada de novas vendas no sistema.
+3.  **Processamento:** Usa SQL para agregar os dados brutos diretamente na fonte.
+4.  **Cálculo de KPIs:** Gera métricas de Faturamento Total e Ticket Médio.
+5.  **Dataviz:** Exporta gráficos que mostram a performance por Região e Categoria.
 
-- **Python**
-- **SQLite**
-- **SQL**
-- **Pandas**
-- **Matplotlib**
+## 📊 Exemplos de Insights
+Ao rodar o projeto com os dados de amostra, conseguimos identificar padrões claros, como a predominância de faturamento na categoria de **Eletrônicos** em comparação a **Móveis**, o que sugeriria, num cenário real, um foco maior de estoque para essa categoria.
 
----
-
-## 📂 Estrutura do Projeto
-
-analise_vendas_kpi/
-│── main.py # Script principal
-
-│── vendas.csv # Base de dados de vendas
-
-│── vendas.db # Banco de dados SQLite
-
-│── logo.png # Logo do projeto
-
-│── README.md # Documentação
-
-
----
-
-## 📊 Funcionalidades
-
-- Criação e conexão com **banco de dados SQLite**
-- Inserção e consulta de dados de vendas
-- Cálculo de **KPIs estratégicos**
-- Análise de faturamento por **categoria** e **região**
-- Geração de **visualizações gráficas** para apoio à tomada de decisão
+## 🔜 Próximos Passos
+Para evoluir este portfólio, estou trabalhando nas seguintes melhorias:
+- [ ] Implementar um modelo preditivo com **Scikit-Learn** para prever o faturamento do próximo mês (Regressão Linear).
+- [ ] Criar um dashboard interativo (Streamlit ou Power BI).
+- [ ] Adicionar tratamento de datas mais robusto para análise de sazonalidade.
 
 ---
-
-## 📈 KPIs Analisados
-
-- Faturamento total
-- Ticket médio
-- Quantidade total de vendas
-- Faturamento por categoria
-- Faturamento por região
-
----
-
-## ▶️ Como Executar o Projeto
-
-1. Clone o repositório:
-```bash
-git clone https://github.com/lsibrito/analise_vendas_kpi.git
-
-2. Instale as dependências:
-pip install pandas matplotlib
-
-
-3. Execute o projeto:
-python main.py
+*Desenvolvido por Leonardo Brito - São Carlos, SP*
 
 
